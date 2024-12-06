@@ -2,7 +2,195 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>CameraMonit AI - Military Grade Surveillance</title>
+    <title>Strażnik 24 AI - Military Grade Surveillance - straznik24.pl</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #ffffff;
+            background: #000000;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
+            url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" fill="%23000000"/><path d="M0,10 L20,10 M10,0 L10,20" stroke="%239BC53D" stroke-width="0.5" stroke-opacity="0.1"/></svg>');
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 4px solid #9BC53D;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 48%, #9BC53D 49%, #9BC53D 51%, transparent 52%);
+            opacity: 0.1;
+            animation: scan 4s linear infinite;
+        }
+
+        @keyframes scan {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(100%);
+            }
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: #9BC53D;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 10px rgba(155, 197, 61, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            color: #ffffff;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .feature-badge {
+            display: inline-block;
+            background: rgba(155, 197, 61, 0.2);
+            color: #9BC53D;
+            padding: 0.5rem 1.5rem;
+            margin: 0.5rem;
+            border: 1px solid #9BC53D;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(155, 197, 61, 0.5);
+        }
+
+        .highlight-box {
+            background: rgba(155, 197, 61, 0.1);
+            border: 1px solid #9BC53D;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(to right, transparent, #9BC53D, transparent);
+        }
+
+        .highlight-box h2 {
+            color: #9BC53D;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .highlight-box p {
+            color: #ffffff;
+            opacity: 0.9;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid #9BC53D;
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(155, 197, 61, 0.2);
+        }
+
+        .feature-card h3 {
+            color: #9BC53D;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #9BC53D;
+            color: #000000;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 2rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background: #b8e357;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(155, 197, 61, 0.3);
+        }
+
+        .specs-list {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .specs-list li {
+            margin: 1rem 0;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .specs-list li::before {
+            content: '►';
+            color: #9BC53D;
+            position: absolute;
+            left: 0;
+        }
+
+        footer {
+            background: rgba(155, 197, 61, 0.1);
+            padding: 2rem;
+            margin-top: 4rem;
+            border-top: 1px solid #9BC53D;
+            text-align: center;
+        }
+    </style>
+
     <style>
         * {
             box-sizing: border-box;
@@ -35,30 +223,32 @@
             opacity: 0.1;
             pointer-events: none;
             z-index: -1;
-            background:
-                    radial-gradient(circle at 100% 50%, var(--camo-dark) 20%, transparent 21%),
-                    radial-gradient(circle at 0% 50%, var(--camo-mid) 20%, transparent 21%),
-                    radial-gradient(circle at 50% 100%, var(--camo-light) 25%, transparent 26%),
-                    radial-gradient(circle at 50% 0%, var(--camo-brown) 25%, transparent 26%);
+            background: radial-gradient(circle at 100% 90%, var(--camo-dark) 70%, transparent 81%),
+            radial-gradient(circle at 0% 90%, var(--camo-mid) 70%, transparent 81%),
+            radial-gradient(circle at 50% 100%, var(--camo-light) 75%, transparent 86%),
+            radial-gradient(circle at 50% 0%, var(--camo-brown) 75%, transparent 86%);
             background-size: 100px 100px;
             animation: camouflageMove 60s linear infinite;
         }
 
         @keyframes camouflageMove {
-            0% { background-position: 0 0; }
-            100% { background-position: 100px 100px; }
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 100px 100px;
+            }
         }
 
         .hero {
-            background:
-                    linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
-                    repeating-conic-gradient(
-                            from 0deg,
-                            var(--camo-dark) 0deg 90deg,
-                            var(--camo-mid) 90deg 180deg,
-                            var(--camo-light) 180deg 270deg,
-                            var(--camo-brown) 270deg 360deg
-                    );
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)),
+            repeating-conic-gradient(
+                    from 0deg,
+                    var(--camo-dark) 0deg 90deg,
+                    var(--camo-mid) 90deg 180deg,
+                    var(--camo-light) 180deg 270deg,
+                    var(--camo-brown) 270deg 360deg
+            );
             padding: 4rem 2rem;
             text-align: center;
             border-bottom: 4px solid var(--accent);
@@ -74,13 +264,16 @@
             right: 0;
             bottom: 0;
             background: url('data:image/svg+xml,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0,50 Q25,0 50,50 T100,50" fill="none" stroke="%239BC53D" stroke-width="2"/></svg>');
-            opacity: 0.1;
-            animation: patternMove 20s linear infinite;
+            opacity: 0.05;
         }
 
         @keyframes patternMove {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(100%); }
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(100%);
+            }
         }
 
         .feature-card {
@@ -103,19 +296,17 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background:
-                    radial-gradient(circle at 30% 70%, var(--camo-dark) 10%, transparent 11%),
-                    radial-gradient(circle at 70% 30%, var(--camo-mid) 10%, transparent 11%);
+            background: radial-gradient(circle at 30% 70%, var(--camo-dark) 10%, transparent 11%),
+            radial-gradient(circle at 70% 30%, var(--camo-mid) 10%, transparent 11%);
             background-size: 30px 30px;
             opacity: 0.1;
         }
 
         .highlight-box {
-            background:
-                    linear-gradient(135deg,
-                    rgba(75, 83, 32, 0.2),
-                    rgba(123, 136, 81, 0.2)
-                    );
+            background: linear-gradient(135deg,
+            rgba(75, 83, 32, 0.2),
+            rgba(123, 136, 81, 0.2)
+            );
             border: 2px solid var(--accent);
             padding: 2rem;
             margin: 2rem 0;
@@ -131,21 +322,24 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background:
-                    linear-gradient(45deg,
-                    transparent 48%,
-                    var(--camo-dark) 49%,
-                    var(--camo-dark) 51%,
-                    transparent 52%
-                    );
+            background: linear-gradient(45deg,
+            transparent 48%,
+            var(--camo-dark) 49%,
+            var(--camo-dark) 51%,
+            transparent 52%
+            );
             background-size: 20px 20px;
             opacity: 0.1;
             animation: patternShift 30s linear infinite;
         }
 
         @keyframes patternShift {
-            0% { background-position: 0 0; }
-            100% { background-position: 40px 40px; }
+            0% {
+                background-position: 0 0;
+            }
+            100% {
+                background-position: 40px 40px;
+            }
         }
 
         .feature-badge {
@@ -155,7 +349,7 @@
             );
             border: 1px solid var(--accent);
             color: #ffffff;
-            text-shadow: 0 0 5px rgba(0,0,0,0.5);
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
         }
 
         .cta-button {
@@ -190,7 +384,7 @@
             height: 200%;
             background: linear-gradient(
                     transparent,
-                    rgba(255,255,255,0.1),
+                    rgba(255, 255, 255, 0.1),
                     transparent
             );
             transform: rotate(45deg);
@@ -198,16 +392,678 @@
         }
 
         @keyframes buttonShine {
-            0% { transform: translateX(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) rotate(45deg); }
+            0% {
+                transform: translateX(-100%) rotate(45deg);
+            }
+            100% {
+                transform: translateX(100%) rotate(45deg);
+            }
         }
 
-        /* Reszta stylów pozostaje jak w poprzednim kodzie */
+
+    </style>
+
+
+    <style>
+
+        .configurator-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .config-header {
+            background: linear-gradient(45deg, rgba(75, 83, 32, 0.9), rgba(155, 197, 61, 0.9));
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border: 1px solid #9BC53D;
+            text-align: center;
+        }
+
+        .config-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            background: rgba(155, 197, 61, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .step {
+            padding: 0.5rem 1rem;
+            border: 1px solid #9BC53D;
+            border-radius: 4px;
+            color: #9BC53D;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .step.active {
+            background: #9BC53D;
+            color: #000000;
+        }
+
+        .config-section {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #9BC53D;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .option-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .option-card {
+            background: rgba(155, 197, 61, 0.1);
+            border: 1px solid #9BC53D;
+            border-radius: 4px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .option-card:hover {
+            background: rgba(155, 197, 61, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .option-card.selected {
+            background: rgba(155, 197, 61, 0.3);
+            border: 2px solid #9BC53D;
+        }
+
+        .option-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #9BC53D, transparent);
+        }
+
+        .price-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #9BC53D;
+            color: #000000;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .summary-box {
+            background: linear-gradient(45deg, rgba(0, 0, 0, 0.9), rgba(75, 83, 32, 0.3));
+            border: 2px solid #9BC53D;
+            border-radius: 8px;
+            padding: 2rem;
+            position: sticky;
+            top: 20px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.5rem 0;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(155, 197, 61, 0.3);
+        }
+
+        .total-price {
+            font-size: 1.5rem;
+            color: #9BC53D;
+            text-align: right;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid #9BC53D;
+        }
+
+        .config-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .nav-button {
+            background: #4b5320;
+            color: #ffffff;
+            border: 1px solid #9BC53D;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background: #9BC53D;
+            color: #000000;
+        }
+
+        .feature-tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.9);
+            border: 1px solid #9BC53D;
+            padding: 0.5rem;
+            border-radius: 4px;
+            display: none;
+            z-index: 100;
+        }
+
+        .option-card:hover .feature-tooltip {
+            display: block;
+        }
 
     </style>
 </head>
 <body>
 <div class="camo-pattern"></div>
-<!-- Reszta struktury HTML pozostaje taka sama jak w poprzednim kodzie -->
+
+<div class="hero">
+    <h1>straznik24.pl</h1>
+    <p>System monitoringu klasy militarnej</p>
+    <div>
+        <span class="feature-badge">Embedded AI</span>
+        <span class="feature-badge">Stealth Mode</span>
+        <span class="feature-badge">Zero Internet</span>
+        <span class="feature-badge">STANDALONE</span>
+    </div>
+</div>
+
+<div class="container">
+    <div class="highlight-box">
+        <h2>Przewaga Taktyczna</h2>
+        <p>Autonomiczny system monitoringu z wbudowaną sztuczną inteligencją i powiadomieniami głosowymi</p>
+    </div>
+
+    <div class="feature-grid">
+        <div class="feature-card">
+            <h3>Autonomia</h3>
+            <p>Działa bez internetu, zasilanie solarne, wbudowane AI</p>
+        </div>
+        <div class="feature-card">
+            <h3>Stealth Mode</h3>
+            <p>Maskowanie w terenie, niewidoczna dla intruza</p>
+        </div>
+        <div class="feature-card">
+            <h3>Tactical Comms</h3>
+            <p>Powiadomienia głosowe i MMS bez aplikacji</p>
+        </div>
+    </div>
+
+
+    <style>
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            margin: 2rem 0;
+            background: #000000;
+            box-shadow: 0 4px 15px rgba(155, 197, 61, 0.2);
+            border: 3px solid #9BC53D;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .comparison-table th {
+            background: #000000;
+            color: #ffffff;
+            padding: 1.2rem 1rem;
+            text-align: left;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #9BC53D;
+            font-weight: 600;
+        }
+
+        .comparison-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #333333;
+            color: #ffffff;
+            background: #000000;
+        }
+
+        .comparison-table tr {
+            transition: all 0.3s ease;
+        }
+
+        .comparison-table tr:hover {
+            background: rgba(155, 197, 61, 0.1);
+        }
+
+        /* straznik24.pl AI kolumna */
+        .feature-highlight {
+            background: rgba(155, 197, 61, 0.15) !important;
+            border-left: 4px solid #9BC53D;
+        }
+
+        /* Ikony statusu */
+        .check {
+            color: #9BC53D;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(155, 197, 61, 0.5);
+        }
+
+        .x {
+            color: #FF4136;
+            opacity: 0.9;
+            text-shadow: 0 0 5px rgba(255, 65, 54, 0.5);
+        }
+
+        /* Pierwsza kolumna - nazwy parametrów */
+        .comparison-table td:first-child {
+            font-weight: 500;
+            color: #ffffff;
+            border-right: 2px solid #333333;
+            background: rgba(51, 51, 51, 0.3);
+        }
+
+        /* Badge militarny */
+        .military-badge {
+            display: inline-block;
+            background: #9BC53D;
+            color: #000000;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        /* Ceny */
+        .price {
+            color: #FFA500;
+            font-weight: bold;
+            font-family: monospace;
+            letter-spacing: 1px;
+            text-shadow: 0 0 5px rgba(255, 165, 0, 0.5);
+        }
+
+        /* Nagłówki kolumn */
+        .comparison-table th:nth-child(2) {
+            border-bottom: 2px solid #FF4136;
+        }
+
+        .comparison-table th:nth-child(3) {
+            border-bottom: 2px solid #FFA500;
+        }
+
+        .comparison-table th:nth-child(4) {
+            border-bottom: 2px solid #9BC53D;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Statusy z nowymi kolorami */
+        .status-good {
+            color: #9BC53D;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(155, 197, 61, 0.5);
+        }
+
+        .status-bad {
+            color: #FF4136;
+            font-weight: normal;
+            text-shadow: 0 0 5px rgba(255, 65, 54, 0.5);
+        }
+
+        .status-neutral {
+            color: #FFA500;
+            font-weight: normal;
+            text-shadow: 0 0 5px rgba(255, 165, 0, 0.5);
+        }
+
+        /* Obramowanie komórek */
+        .comparison-table td, .comparison-table th {
+            border-right: 1px solid #333333;
+        }
+    </style>
+    <table class="comparison-table">
+        <tr>
+            <th>Parametry</th>
+            <th>Kamera GSM Basic</th>
+            <th>Camera Tower Pro</th>
+            <th>straznik24.pl</th>
+        </tr>
+        <tr>
+            <td>Koszt wdrożenia <span class="military-badge">CAPEX</span></td>
+            <td class="price">500-1500 PLN</td>
+            <td class="price">15000-25000 PLN</td>
+            <td class="price feature-highlight">2500-4000 PLN</td>
+        </tr>
+        <tr>
+            <td>Koszty operacyjne <span class="military-badge">OPEX</span></td>
+            <td class="status-bad">50-100 PLN/msc</td>
+            <td class="status-bad">200-500 PLN/msc</td>
+            <td class="status-good feature-highlight">30-50 PLN/msc</td>
+        </tr>
+        <tr>
+            <td>Czas deploymentu</td>
+            <td class="status-neutral">30-60 min</td>
+            <td class="status-bad">2-3 dni</td>
+            <td class="status-good feature-highlight">5 min</td>
+        </tr>
+        <tr>
+            <td>Autonomiczne AI</td>
+            <td><span class="x">✕ BRAK</span></td>
+            <td><span class="x">✕ ONLINE ONLY</span></td>
+            <td class="feature-highlight"><span class="check">✓ OFFLINE AI</span></td>
+        </tr>
+        <tr>
+            <td>Stealth Mode</td>
+            <td><span class="x">✕ EXPOSED</span></td>
+            <td><span class="x">✕ VISIBLE</span></td>
+            <td class="feature-highlight"><span class="check">✓ CAMO TECH</span></td>
+        </tr>
+        <tr>
+            <td>Tactical Comms</td>
+            <td><span class="x">✕ APP ONLY</span></td>
+            <td><span class="x">✕ APP+MAIL</span></td>
+            <td class="feature-highlight"><span class="check">✓ VOICE+MMS</span></td>
+        </tr>
+        <tr>
+            <td>Network Dependency</td>
+            <td><span class="x">✕ REQUIRED</span></td>
+            <td><span class="x">✕ REQUIRED</span></td>
+            <td class="feature-highlight"><span class="check">✓ AUTONOMOUS</span></td>
+        </tr>
+        <tr>
+            <td>Anti-Tamper</td>
+            <td><span class="x">✕ BASIC</span></td>
+            <td class="status-neutral">STANDARD</td>
+            <td class="feature-highlight"><span class="check">✓ MILITARY GRADE</span></td>
+        </tr>
+        <tr>
+            <td>Deployment Zone</td>
+            <td class="status-bad">LOCAL</td>
+            <td class="status-neutral">WIDE</td>
+            <td class="feature-highlight status-good">DISTRIBUTED</td>
+        </tr>
+        <tr>
+            <td>Security Level</td>
+            <td><span class="x">✕ CIVILIAN</span></td>
+            <td class="status-neutral">COMMERCIAL</td>
+            <td class="feature-highlight"><span class="check">✓ MILITARY SPEC</span></td>
+        </tr>
+    </table>
+
+
+    <style>
+        .chart-container {
+            background: #000000;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 3px solid #5a6b24;
+            margin: 2rem 0;
+            color: #ffffff;
+            box-shadow: 0 0 20px rgba(90, 107, 36, 0.3);
+        }
+    </style>
+    <div class="chart-container">
+        <h3 style="text-align: center; color: #ffffff; margin-bottom: 2rem; text-shadow: 0 0 10px rgba(90, 107, 36, 0.5);">
+            Porównanie Parametrów Taktycznych
+        </h3>
+        <div id="radarChart">
+            <svg width="800" height="600" viewBox="0 0 800 600">
+                <defs>
+                    <!-- Gradienty dla każdego systemu -->
+                    <radialGradient id="straznik24.plGradient">
+                        <stop offset="0%" stop-color="#9BC53D" stop-opacity="0.4"/>
+                        <stop offset="100%" stop-color="#5a6b24" stop-opacity="0.2"/>
+                    </radialGradient>
+                    <radialGradient id="towerGradient">
+                        <stop offset="0%" stop-color="#FFA500" stop-opacity="0.4"/>
+                        <stop offset="100%" stop-color="#8B4513" stop-opacity="0.2"/>
+                    </radialGradient>
+                    <radialGradient id="basicGradient">
+                        <stop offset="0%" stop-color="#FF4136" stop-opacity="0.4"/>
+                        <stop offset="100%" stop-color="#85144b" stop-opacity="0.2"/>
+                    </radialGradient>
+                </defs>
+
+                <!-- Tło siatki -->
+                <g transform="translate(400,300)">
+                    <!-- Linie pomocnicze z większym kontrastem -->
+                    <path d="M0,-200 L173.2,-100 L173.2,100 L0,200 L-173.2,100 L-173.2,-100 Z"
+                          fill="none" stroke="#1a1a1a" stroke-width="2"/>
+                    <path d="M0,-150 L129.9,-75 L129.9,75 L0,150 L-129.9,75 L-129.9,-75 Z"
+                          fill="none" stroke="#1a1a1a" stroke-width="2"/>
+                    <path d="M0,-100 L86.6,-50 L86.6,50 L0,100 L-86.6,50 L-86.6,-50 Z"
+                          fill="none" stroke="#1a1a1a" stroke-width="2"/>
+                    <path d="M0,-50 L43.3,-25 L43.3,25 L0,50 L-43.3,25 L-43.3,-25 Z"
+                          fill="none" stroke="#1a1a1a" stroke-width="2"/>
+
+                    <!-- Osie z jaśniejszym kolorem -->
+                    <line x1="0" y1="0" x2="0" y2="-200" stroke="#333333" stroke-width="2"/>
+                    <line x1="0" y1="0" x2="173.2" y2="-100" stroke="#333333" stroke-width="2"/>
+                    <line x1="0" y1="0" x2="173.2" y2="100" stroke="#333333" stroke-width="2"/>
+                    <line x1="0" y1="0" x2="0" y2="200" stroke="#333333" stroke-width="2"/>
+                    <line x1="0" y1="0" x2="-173.2" y2="100" stroke="#333333" stroke-width="2"/>
+                    <line x1="0" y1="0" x2="-173.2" y2="-100" stroke="#333333" stroke-width="2"/>
+
+                    <!-- straznik24.pl AI - jaśniejszy zielony -->
+                    <path d="M0,-180 L156,-90 L156,90 L0,160 L-156,90 L-156,-90 Z"
+                          fill="url(#straznik24.plGradient)" stroke="#9BC53D" stroke-width="3"/>
+
+                    <!-- Camera Tower - pomarańczowy -->
+                    <path d="M0,-140 L121.2,-70 L121.2,70 L0,120 L-121.2,70 L-121.2,-70 Z"
+                          fill="url(#towerGradient)" stroke="#FFA500" stroke-width="3"/>
+
+                    <!-- Basic Camera - czerwony -->
+                    <path d="M0,-60 L52,-30 L52,30 L0,50 L-52,30 L-52,-30 Z"
+                          fill="url(#basicGradient)" stroke="#FF4136" stroke-width="3"/>
+
+                    <!-- Etykiety osi z lepszym kontrastem -->
+                    <text x="0" y="-220" text-anchor="middle" fill="#ffffff" font-weight="bold">Bezpieczeństwo</text>
+                    <text x="190" y="-110" text-anchor="start" fill="#ffffff" font-weight="bold">Autonomia</text>
+                    <text x="190" y="110" text-anchor="start" fill="#ffffff" font-weight="bold">Maskowanie</text>
+                    <text x="0" y="220" text-anchor="middle" fill="#ffffff" font-weight="bold">ROI</text>
+                    <text x="-190" y="110" text-anchor="end" fill="#ffffff" font-weight="bold">Niezawodność</text>
+                    <text x="-190" y="-110" text-anchor="end" fill="#ffffff" font-weight="bold">Szybkość</text>
+
+                    <!-- Wartości procentowe na osiach -->
+                    <text x="0" y="-180" text-anchor="middle" fill="#666666">100%</text>
+                    <text x="0" y="-130" text-anchor="middle" fill="#666666">75%</text>
+                    <text x="0" y="-80" text-anchor="middle" fill="#666666">50%</text>
+                    <text x="0" y="-30" text-anchor="middle" fill="#666666">25%</text>
+                </g>
+
+                <!-- Legenda z lepszym kontrastem -->
+                <g transform="translate(650,50)">
+                    <rect x="0" y="0" width="20" height="20" fill="#9BC53D" fill-opacity="0.4" stroke="#9BC53D"/>
+                    <text x="30" y="15" fill="#ffffff" font-weight="bold">straznik24.pl AI</text>
+
+                    <rect x="0" y="30" width="20" height="20" fill="#FFA500" fill-opacity="0.4" stroke="#FFA500"/>
+                    <text x="30" y="45" fill="#ffffff" font-weight="bold">Camera Tower</text>
+
+                    <rect x="0" y="60" width="20" height="20" fill="#FF4136" fill-opacity="0.4" stroke="#FF4136"/>
+                    <text x="30" y="75" fill="#ffffff" font-weight="bold">Basic Camera</text>
+                </g>
+            </svg>
+        </div>
+    </div>
+
+
+    <div class="highlight-box">
+        <h2>Specyfikacja</h2>
+        <ul class="specs-list">
+            <li>Wbudowany system AI działający offline</li>
+            <li>Autonomia energetyczna do 30 dni</li>
+            <li>Militarny system maskowania</li>
+            <li>Komunikacja głosowa i MMS</li>
+            <li>Czas deploymentu: 5 minut</li>
+            <li>Zabezpieczenia antysabotażowe</li>
+            <li>Zero konfiguracji</li>
+        </ul>
+        <button class="cta-button">Zamów Demonstrację</button>
+    </div>
+</div>
+
+<div class="configurator-container">
+    <div class="config-header">
+        <h1>straznik24.pl AI - Konfigurator Systemu</h1>
+        <p>Skonfiguruj system dostosowany do Twoich potrzeb</p>
+    </div>
+
+    <div class="config-steps">
+        <div class="step active">1. System Bazowy</div>
+        <div class="step">2. Rozszerzenia</div>
+        <div class="step">3. AI</div>
+        <div class="step">4. Integracje</div>
+        <div class="step">5. Wsparcie</div>
+    </div>
+
+    <div class="option-grid">
+        <!-- System Bazowy -->
+        <div class="option-card selected">
+            <h3>Single Node</h3>
+            <p>Pojedynczy punkt monitoringu</p>
+            <div class="price-tag">2500 PLN</div>
+            <ul class="specs-list">
+                <li>1x straznik24.pl AI</li>
+                <li>Podstawowy system montażowy</li>
+                <li>Standardowa analityka</li>
+            </ul>
+        </div>
+
+        <div class="option-card">
+            <h3>Mesh System</h3>
+            <p>System rozproszony</p>
+            <div class="price-tag">6500 PLN</div>
+            <ul class="specs-list">
+                <li>3x straznik24.pl AI</li>
+                <li>Mesh networking</li>
+                <li>Zaawansowana analityka</li>
+            </ul>
+        </div>
+
+        <div class="option-card">
+            <h3>Enterprise Grid</h3>
+            <p>System dla dużych obiektów</p>
+            <div class="price-tag">15000 PLN</div>
+            <ul class="specs-list">
+                <li>10x straznik24.pl AI</li>
+                <li>Pełna integracja</li>
+                <li>Custom AI</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Rozszerzenia -->
+    <div class="config-section">
+        <h2>Rozszerzenia Systemu</h2>
+        <div class="option-grid">
+            <div class="option-card">
+                <h3>Extended Battery Pack</h3>
+                <p>Zwiększona autonomia</p>
+                <div class="price-tag">1200 PLN</div>
+                <ul class="specs-list">
+                    <li>100Ah Akumulator</li>
+                    <li>60 dni pracy</li>
+                    <li>Smart charging</li>
+                </ul>
+            </div>
+
+            <div class="option-card">
+                <h3>Solar Pro</h3>
+                <p>Zaawansowany system solarny</p>
+                <div class="price-tag">2000 PLN</div>
+                <ul class="specs-list">
+                    <li>60W Panel</li>
+                    <li>MPPT Controller</li>
+                    <li>All-weather</li>
+                </ul>
+            </div>
+
+            <div class="option-card">
+                <h3>Stealth Pro</h3>
+                <p>Zaawansowane maskowanie</p>
+                <div class="price-tag">800 PLN</div>
+                <ul class="specs-list">
+                    <li>Camo coating</li>
+                    <li>IR reduction</li>
+                    <li>Anti-detection</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Modules -->
+    <div class="config-section">
+        <h2>Moduły AI</h2>
+        <div class="option-grid">
+            <div class="option-card">
+                <h3>Object Detection Pro</h3>
+                <p>Rozszerzona detekcja obiektów</p>
+                <div class="price-tag">1500 PLN</div>
+                <ul class="specs-list">
+                    <li>50 klas obiektów</li>
+                    <li>Night vision AI</li>
+                    <li>Movement prediction</li>
+                </ul>
+            </div>
+
+            <div class="option-card">
+                <h3>Behavior Analysis</h3>
+                <p>Analiza zachowań</p>
+                <div class="price-tag">2000 PLN</div>
+                <ul class="specs-list">
+                    <li>Pattern recognition</li>
+                    <li>Anomaly detection</li>
+                    <li>Threat assessment</li>
+                </ul>
+            </div>
+
+            <div class="option-card">
+                <h3>Custom AI</h3>
+                <p>Customizacja AI</p>
+                <div class="price-tag">5000 PLN</div>
+                <ul class="specs-list">
+                    <li>Custom models</li>
+                    <li>Specific detection</li>
+                    <li>Advanced analytics</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="summary-box">
+        <h2>Podsumowanie Konfiguracji</h2>
+        <div class="summary-item">
+            <span>System Bazowy</span>
+            <span>2500 PLN</span>
+        </div>
+        <div class="summary-item">
+            <span>Rozszerzenia</span>
+            <span>3200 PLN</span>
+        </div>
+        <div class="summary-item">
+            <span>Moduły AI</span>
+            <span>1500 PLN</span>
+        </div>
+        <div class="total-price">
+            Suma: 7200 PLN
+        </div>
+        <button class="nav-button" style="width: 100%; margin-top: 1rem;">
+            Zamów Konfigurację
+        </button>
+    </div>
+
+</div>
+
+<footer>
+    <p>straznik24.pl - Advanced Surveillance Solutions</p>
+</footer>
 </body>
 </html>

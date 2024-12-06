@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>CameraMonit AI - Konfigurator Systemu</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        body {
+            background: #000000;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        .configurator-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .config-header {
+            background: linear-gradient(45deg, rgba(75, 83, 32, 0.9), rgba(155, 197, 61, 0.9));
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border: 1px solid #9BC53D;
+            text-align: center;
+        }
+
+        .config-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            background: rgba(155, 197, 61, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .step {
+            padding: 0.5rem 1rem;
+            border: 1px solid #9BC53D;
+            border-radius: 4px;
+            color: #9BC53D;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .step.active {
+            background: #9BC53D;
+            color: #000000;
+        }
+
+        .config-section {
+            background: rgba(0, 0, 0, 0.8);
+            border: 1px solid #9BC53D;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .option-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .option-card {
+            background: rgba(155, 197, 61, 0.1);
+            border: 1px solid #9BC53D;
+            border-radius: 4px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .option-card:hover {
+            background: rgba(155, 197, 61, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .option-card.selected {
+            background: rgba(155, 197, 61, 0.3);
+            border: 2px solid #9BC53D;
+        }
+
+        .option-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #9BC53D, transparent);
+        }
+
+        .price-tag {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #9BC53D;
+            color: #000000;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-weight: bold;
+        }
+
+        .summary-box {
+            background: linear-gradient(45deg, rgba(0,0,0,0.9), rgba(75, 83, 32, 0.3));
+            border: 2px solid #9BC53D;
+            border-radius: 8px;
+            padding: 2rem;
+            position: sticky;
+            top: 20px;
+        }
+
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            margin: 0.5rem 0;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(155, 197, 61, 0.3);
+        }
+
+        .total-price {
+            font-size: 1.5rem;
+            color: #9BC53D;
+            text-align: right;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 2px solid #9BC53D;
+        }
+
+        .config-nav {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2rem;
+        }
+
+        .nav-button {
+            background: #4b5320;
+            color: #ffffff;
+            border: 1px solid #9BC53D;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-button:hover {
+            background: #9BC53D;
+            color: #000000;
+        }
+
+        .feature-tooltip {
+            position: absolute;
+            background: rgba(0,0,0,0.9);
+            border: 1px solid #9BC53D;
+            padding: 0.5rem;
+            border-radius: 4px;
+            display: none;
+            z-index: 100;
+        }
+
+        .option-card:hover .feature-tooltip {
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+<div class="configurator-container">
+    <div class="config-header">
+        <h1>CameraMonit AI - Konfigurator Systemu</h1>
+        <p>Skonfiguruj system dostosowany do Twoich potrzeb</p>
+    </div>
+
+    <div class="config-steps">
+        <div class="step active">1. System Bazowy</div>
+        <div class="step">2. Rozszerzenia</div>
+        <div class="step">3. AI</div>
+        <div class="step">4. Integracje</div>
+        <div class="step">5. Wsparcie</div>
+    </div>
+
+    <div class="option-grid">
+        <!-- System Bazowy -->
+        <div class="option-card selected">
+            <h3>Single Node</h3>
+            <p>Pojedynczy punkt monitoringu</p>
+            <div class="price-tag">2500 PLN</div>
+            <ul>
+                <li>1x CameraMonit AI</li>
+                <li>Podstawowy system montażowy</li>
+                <li>Standardowa analityka</li>
+            </ul>
+        </div>
+
+        <div class="option-card">
+            <h3>Mesh System</h3>
+            <p>System rozproszony</p>
+            <div class="price-tag">6500 PLN</div>
+            <ul>
+                <li>3x CameraMonit AI</li>
+                <li>Mesh networking</li>
+                <li>Zaawansowana analityka</li>
+            </ul>
+        </div>
+
+        <div class="option-card">
+            <h3>Enterprise Grid</h3>
+            <p>System dla dużych obiektów</p>
+            <div class="price-tag">15000 PLN</div>
+            <ul>
+                <li>10x CameraMonit AI</li>
+                <li>Pełna integracja</li>
+                <li>Custom AI</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Rozszerzenia -->
+    <div class="config-section">
+        <h2>Rozszerzenia Systemu</h2>
+        <div class="option-grid">
+            <div class="option-card">
+                <h3>Extended Battery Pack</h3>
+                <p>Zwiększona autonomia</p>
+                <div class="price-tag">1200 PLN</div>
+                <ul>
+                    <li>100Ah Akumulator</li>
+                    <li>60 dni pracy</li>
+                    <li>Smart charging</li>
+                </ul>
+            </div>
+
+            <div class="option-card">
+                <h3>Solar Pro</h3>
+                <p>Zaawansowany system solarny</p>
+                <div class="price-tag">2000 PLN</div>
+                <ul>
+                    <li>60W Panel</li>
+                    <li>MPPT Controller</li>
+                    <li>All-weather</li>
+                </ul>
+            </div>
+
+            <div class="option-card">
+                <h3>Stealth Pro</h3>
+                <p>Zaawansowane maskowanie</p>
+                <div class="price-tag">800 PLN</div>
+                <ul>
+                    <li>Camo coating</li>
+                    <li>IR reduction</li>
+                    <li>Anti-detection</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI Modules -->
+    <div class="config-section">
+        <h2>Moduły AI</h2>
+        <div class="option-grid">
+            <div class="option-card">
+                <h3>Object Detection Pro</h3>
+                <p>Rozszerzona detekcja obiektów</p>
+                <div class="price-tag">1500 PLN</div>
+                <ul>
+                    <li>50 klas obiektów</li>
+                    <li>Night vision AI</li>
+                    <li>Movement prediction</li>
+                </ul>
+            </div>
+
+            <div class="option-card">
+                <h3>Behavior Analysis</h3>
+                <p>Analiza zachowań</p>
+                <div class="price-tag">2000 PLN</div>
+                <ul>
+                    <li>Pattern recognition</li>
+                    <li>Anomaly detection</li>
+                    <li>Threat assessment</li>
+                </ul>
+            </div>
+
+            <div class="option-card">
+                <h3>Custom AI</h3>
+                <p>Customizacja AI</p>
+                <div class="price-tag">5000 PLN</div>
+                <ul>
+                    <li>Custom models</li>
+                    <li>Specific detection</li>
+                    <li>Advanced analytics</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="summary-box">
+        <h2>Podsumowanie Konfiguracji</h2>
+        <div class="summary-item">
+            <span>System Bazowy</span>
+            <span>2500 PLN</span>
+        </div>
+        <div class="summary-item">
+            <span>Rozszerzenia</span>
+            <span>3200 PLN</span>
+        </div>
+        <div class="summary-item">
+            <span>Moduły AI</span>
+            <span>1500 PLN</span>
+        </div>
+        <div class="total-price">
+            Suma: 7200 PLN
+        </div>
+        <button class="nav-button" style="width: 100%; margin-top: 1rem;">
+            Zamów Konfigurację
+        </button>
+    </div>
+
+</div>
+</body>
+</html>
