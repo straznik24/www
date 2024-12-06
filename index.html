@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Strażnik 24 AI - Military Grade Surveillance - straznik24.pl</title>
+    <title>Strażnik 24 - Portable Military Grade Surveillance System - www.straznik24.pl</title>
     <style>
         * {
             box-sizing: border-box;
@@ -17,6 +17,22 @@
             background: #000000;
         }
 
+        #specyfikacja {
+            background: url(straznik24.webp) 100% 100%;
+            background-repeat: no-repeat;
+            background-size: 100%;
+            background-position: top;
+            font-size: 2em;
+        }
+        #specyfikacja h2,
+        #specyfikacja li span{
+            background-color: rgba(0, 22, 0, 0.9);
+            color: #bfff00;
+        }
+        #specyfikacja li {
+            margin-left: 10px;
+            padding-left: 60px;
+        }
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)),
             url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="20" height="20" fill="%23000000"/><path d="M0,10 L20,10 M10,0 L10,20" stroke="%239BC53D" stroke-width="0.5" stroke-opacity="0.1"/></svg>');
@@ -569,7 +585,7 @@
 
 <div class="hero">
     <h1>straznik24.pl</h1>
-    <p>System monitoringu klasy militarnej</p>
+    <p>Autonomiczny przenośny monitoring (klasy militarnej) z wbudowanym rozponawaniem obiektów, trackingiem, anonimizacją i powiadomieniami głosowymi </p>
     <div>
         <span class="feature-badge">Embedded AI</span>
         <span class="feature-badge">Stealth Mode</span>
@@ -579,10 +595,6 @@
 </div>
 
 <div class="container">
-    <div class="highlight-box">
-        <h2>Przewaga Taktyczna</h2>
-        <p>Autonomiczny system monitoringu z wbudowaną sztuczną inteligencją i powiadomieniami głosowymi</p>
-    </div>
 
     <div class="feature-grid">
         <div class="feature-card">
@@ -598,6 +610,106 @@
             <p>Powiadomienia głosowe i MMS bez aplikacji</p>
         </div>
     </div>
+
+
+
+    <style>
+        .chart-container {
+            background: #000000;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 3px solid #5a6b24;
+            margin: 2rem 0;
+            color: #ffffff;
+            box-shadow: 0 0 20px rgba(90, 107, 36, 0.3);
+        }
+    </style>
+    <div class="chart-container">
+
+        <h3 style="text-align: center; color: #ffffff; margin-bottom: 2rem; text-shadow: 0 0 10px rgba(90, 107, 36, 0.5);">
+            Porównanie Parametrów
+        </h3>
+        <div id="radarChart">
+
+            <svg width="800" height="600" viewBox="0 0 800 600">
+                <defs>
+                    <!-- Gradienty dla każdego systemu -->
+                    <radialGradient id="straznik24.plGradient">
+                        <stop offset="0%" stop-color="#9BC53D" stop-opacity="0.4"/>
+                        <stop offset="100%" stop-color="#5a6b24" stop-opacity="0.2"/>
+                    </radialGradient>
+                    <radialGradient id="towerGradient">
+                        <stop offset="0%" stop-color="#FFA500" stop-opacity="0.4"/>
+                        <stop offset="100%" stop-color="#8B4513" stop-opacity="0.2"/>
+                    </radialGradient>
+                    <radialGradient id="basicGradient">
+                        <stop offset="0%" stop-color="#FF4136" stop-opacity="0.4"/>
+                        <stop offset="100%" stop-color="#85144b" stop-opacity="0.2"/>
+                    </radialGradient>
+                </defs>
+
+                <!-- Tło siatki -->
+                <g transform="translate(400,300)">
+                    <!-- Linie pomocnicze z większym kontrastem -->
+                    <path d="M0,-200 L173.2,-100 L173.2,100 L0,200 L-173.2,100 L-173.2,-100 Z"
+                          fill="none" stroke="#1a1a1a" stroke-width="2"/>
+                    <path d="M0,-150 L129.9,-75 L129.9,75 L0,150 L-129.9,75 L-129.9,-75 Z"
+                          fill="none" stroke="#1a1a1a" stroke-width="2"/>
+                    <path d="M0,-100 L86.6,-50 L86.6,50 L0,100 L-86.6,50 L-86.6,-50 Z"
+                          fill="none" stroke="#1a1a1a" stroke-width="2"/>
+                    <path d="M0,-50 L43.3,-25 L43.3,25 L0,50 L-43.3,25 L-43.3,-25 Z"
+                          fill="none" stroke="#1a1a1a" stroke-width="2"/>
+
+                    <!-- Osie z jaśniejszym kolorem -->
+                    <line x1="0" y1="0" x2="0" y2="-200" stroke="#333333" stroke-width="2"/>
+                    <line x1="0" y1="0" x2="173.2" y2="-100" stroke="#333333" stroke-width="2"/>
+                    <line x1="0" y1="0" x2="173.2" y2="100" stroke="#333333" stroke-width="2"/>
+                    <line x1="0" y1="0" x2="0" y2="200" stroke="#333333" stroke-width="2"/>
+                    <line x1="0" y1="0" x2="-173.2" y2="100" stroke="#333333" stroke-width="2"/>
+                    <line x1="0" y1="0" x2="-173.2" y2="-100" stroke="#333333" stroke-width="2"/>
+
+                    <!-- straznik24.pl AI - jaśniejszy zielony -->
+                    <path d="M0,-180 L156,-90 L156,90 L0,160 L-156,90 L-156,-90 Z"
+                          fill="url(#straznik24.plGradient)" stroke="#9BC53D" stroke-width="3"/>
+
+                    <!-- Camera Tower - pomarańczowy -->
+                    <path d="M0,-140 L121.2,-70 L121.2,70 L0,120 L-121.2,70 L-121.2,-70 Z"
+                          fill="url(#towerGradient)" stroke="#FFA500" stroke-width="3"/>
+
+                    <!-- Basic Camera - czerwony -->
+                    <path d="M0,-60 L52,-30 L52,30 L0,50 L-52,30 L-52,-30 Z"
+                          fill="url(#basicGradient)" stroke="#FF4136" stroke-width="3"/>
+
+                    <!-- Etykiety osi z lepszym kontrastem -->
+                    <text x="0" y="-220" text-anchor="middle" fill="#ffffff" font-weight="bold">Bezpieczeństwo</text>
+                    <text x="190" y="-110" text-anchor="start" fill="#ffffff" font-weight="bold">Autonomia</text>
+                    <text x="190" y="110" text-anchor="start" fill="#ffffff" font-weight="bold">Maskowanie</text>
+                    <text x="0" y="220" text-anchor="middle" fill="#ffffff" font-weight="bold">ROI</text>
+                    <text x="-190" y="110" text-anchor="end" fill="#ffffff" font-weight="bold">Niezawodność</text>
+                    <text x="-190" y="-110" text-anchor="end" fill="#ffffff" font-weight="bold">Szybkość</text>
+
+                    <!-- Wartości procentowe na osiach -->
+                    <text x="0" y="-180" text-anchor="middle" fill="#666666">100%</text>
+                    <text x="0" y="-130" text-anchor="middle" fill="#666666">75%</text>
+                    <text x="0" y="-80" text-anchor="middle" fill="#666666">50%</text>
+                    <text x="0" y="-30" text-anchor="middle" fill="#666666">25%</text>
+                </g>
+
+                <!-- Legenda z lepszym kontrastem -->
+                <g transform="translate(650,50)">
+                    <rect x="0" y="0" width="20" height="20" fill="#9BC53D" fill-opacity="0.4" stroke="#9BC53D"/>
+                    <text x="30" y="15" fill="#ffffff" font-weight="bold">straznik24.pl AI</text>
+
+                    <rect x="0" y="30" width="20" height="20" fill="#FFA500" fill-opacity="0.4" stroke="#FFA500"/>
+                    <text x="30" y="45" fill="#ffffff" font-weight="bold">Camera Tower</text>
+
+                    <rect x="0" y="60" width="20" height="20" fill="#FF4136" fill-opacity="0.4" stroke="#FF4136"/>
+                    <text x="30" y="75" fill="#ffffff" font-weight="bold">Basic Camera</text>
+                </g>
+            </svg>
+        </div>
+    </div>
+
 
 
     <style>
@@ -798,115 +910,21 @@
     </table>
 
 
-    <style>
-        .chart-container {
-            background: #000000;
-            padding: 2rem;
-            border-radius: 8px;
-            border: 3px solid #5a6b24;
-            margin: 2rem 0;
-            color: #ffffff;
-            box-shadow: 0 0 20px rgba(90, 107, 36, 0.3);
-        }
-    </style>
-    <div class="chart-container">
-        <h3 style="text-align: center; color: #ffffff; margin-bottom: 2rem; text-shadow: 0 0 10px rgba(90, 107, 36, 0.5);">
-            Porównanie Parametrów Taktycznych
-        </h3>
-        <div id="radarChart">
-            <svg width="800" height="600" viewBox="0 0 800 600">
-                <defs>
-                    <!-- Gradienty dla każdego systemu -->
-                    <radialGradient id="straznik24.plGradient">
-                        <stop offset="0%" stop-color="#9BC53D" stop-opacity="0.4"/>
-                        <stop offset="100%" stop-color="#5a6b24" stop-opacity="0.2"/>
-                    </radialGradient>
-                    <radialGradient id="towerGradient">
-                        <stop offset="0%" stop-color="#FFA500" stop-opacity="0.4"/>
-                        <stop offset="100%" stop-color="#8B4513" stop-opacity="0.2"/>
-                    </radialGradient>
-                    <radialGradient id="basicGradient">
-                        <stop offset="0%" stop-color="#FF4136" stop-opacity="0.4"/>
-                        <stop offset="100%" stop-color="#85144b" stop-opacity="0.2"/>
-                    </radialGradient>
-                </defs>
 
-                <!-- Tło siatki -->
-                <g transform="translate(400,300)">
-                    <!-- Linie pomocnicze z większym kontrastem -->
-                    <path d="M0,-200 L173.2,-100 L173.2,100 L0,200 L-173.2,100 L-173.2,-100 Z"
-                          fill="none" stroke="#1a1a1a" stroke-width="2"/>
-                    <path d="M0,-150 L129.9,-75 L129.9,75 L0,150 L-129.9,75 L-129.9,-75 Z"
-                          fill="none" stroke="#1a1a1a" stroke-width="2"/>
-                    <path d="M0,-100 L86.6,-50 L86.6,50 L0,100 L-86.6,50 L-86.6,-50 Z"
-                          fill="none" stroke="#1a1a1a" stroke-width="2"/>
-                    <path d="M0,-50 L43.3,-25 L43.3,25 L0,50 L-43.3,25 L-43.3,-25 Z"
-                          fill="none" stroke="#1a1a1a" stroke-width="2"/>
-
-                    <!-- Osie z jaśniejszym kolorem -->
-                    <line x1="0" y1="0" x2="0" y2="-200" stroke="#333333" stroke-width="2"/>
-                    <line x1="0" y1="0" x2="173.2" y2="-100" stroke="#333333" stroke-width="2"/>
-                    <line x1="0" y1="0" x2="173.2" y2="100" stroke="#333333" stroke-width="2"/>
-                    <line x1="0" y1="0" x2="0" y2="200" stroke="#333333" stroke-width="2"/>
-                    <line x1="0" y1="0" x2="-173.2" y2="100" stroke="#333333" stroke-width="2"/>
-                    <line x1="0" y1="0" x2="-173.2" y2="-100" stroke="#333333" stroke-width="2"/>
-
-                    <!-- straznik24.pl AI - jaśniejszy zielony -->
-                    <path d="M0,-180 L156,-90 L156,90 L0,160 L-156,90 L-156,-90 Z"
-                          fill="url(#straznik24.plGradient)" stroke="#9BC53D" stroke-width="3"/>
-
-                    <!-- Camera Tower - pomarańczowy -->
-                    <path d="M0,-140 L121.2,-70 L121.2,70 L0,120 L-121.2,70 L-121.2,-70 Z"
-                          fill="url(#towerGradient)" stroke="#FFA500" stroke-width="3"/>
-
-                    <!-- Basic Camera - czerwony -->
-                    <path d="M0,-60 L52,-30 L52,30 L0,50 L-52,30 L-52,-30 Z"
-                          fill="url(#basicGradient)" stroke="#FF4136" stroke-width="3"/>
-
-                    <!-- Etykiety osi z lepszym kontrastem -->
-                    <text x="0" y="-220" text-anchor="middle" fill="#ffffff" font-weight="bold">Bezpieczeństwo</text>
-                    <text x="190" y="-110" text-anchor="start" fill="#ffffff" font-weight="bold">Autonomia</text>
-                    <text x="190" y="110" text-anchor="start" fill="#ffffff" font-weight="bold">Maskowanie</text>
-                    <text x="0" y="220" text-anchor="middle" fill="#ffffff" font-weight="bold">ROI</text>
-                    <text x="-190" y="110" text-anchor="end" fill="#ffffff" font-weight="bold">Niezawodność</text>
-                    <text x="-190" y="-110" text-anchor="end" fill="#ffffff" font-weight="bold">Szybkość</text>
-
-                    <!-- Wartości procentowe na osiach -->
-                    <text x="0" y="-180" text-anchor="middle" fill="#666666">100%</text>
-                    <text x="0" y="-130" text-anchor="middle" fill="#666666">75%</text>
-                    <text x="0" y="-80" text-anchor="middle" fill="#666666">50%</text>
-                    <text x="0" y="-30" text-anchor="middle" fill="#666666">25%</text>
-                </g>
-
-                <!-- Legenda z lepszym kontrastem -->
-                <g transform="translate(650,50)">
-                    <rect x="0" y="0" width="20" height="20" fill="#9BC53D" fill-opacity="0.4" stroke="#9BC53D"/>
-                    <text x="30" y="15" fill="#ffffff" font-weight="bold">straznik24.pl AI</text>
-
-                    <rect x="0" y="30" width="20" height="20" fill="#FFA500" fill-opacity="0.4" stroke="#FFA500"/>
-                    <text x="30" y="45" fill="#ffffff" font-weight="bold">Camera Tower</text>
-
-                    <rect x="0" y="60" width="20" height="20" fill="#FF4136" fill-opacity="0.4" stroke="#FF4136"/>
-                    <text x="30" y="75" fill="#ffffff" font-weight="bold">Basic Camera</text>
-                </g>
-            </svg>
-        </div>
-    </div>
-
-
-    <div class="highlight-box">
+    <div class="highlight-box" id="specyfikacja">
         <h2>Specyfikacja</h2>
         <ul class="specs-list">
-            <li>Wbudowany system AI działający offline</li>
-            <li>Autonomia energetyczna do 30 dni</li>
-            <li>Militarny system maskowania</li>
-            <li>Komunikacja głosowa i MMS</li>
-            <li>Czas deploymentu: 5 minut</li>
-            <li>Zabezpieczenia antysabotażowe</li>
-            <li>Zero konfiguracji</li>
+            <li><span>Wbudowany system AI działający offline</span></li>
+            <li><span>Autonomia energetyczna do 30 dni</span></li>
+            <li><span>Militarny system maskowania</span></li>
+            <li><span>Komunikacja głosowa i MMS</span></li>
+            <li><span>Czas deploymentu: 5 minut</span></li>
+            <li><span>Zabezpieczenia antysabotażowe</span></li>
+            <li><span>Zero konfiguracji</span></li>
         </ul>
         <button class="cta-button">Zamów Demonstrację</button>
     </div>
+
 </div>
 
 <div class="configurator-container">
