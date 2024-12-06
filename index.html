@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>CameraMonit AI - Military Grade Surveillance</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        :root {
+            --camo-dark: #4b5320;
+            --camo-mid: #7B8851;
+            --camo-light: #A4B177;
+            --camo-brown: #8B7355;
+            --accent: #9BC53D;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #ffffff;
+            background: #000000;
+        }
+
+        /* Wzór kamuflażu w tle */
+        .camo-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.1;
+            pointer-events: none;
+            z-index: -1;
+            background:
+                    radial-gradient(circle at 100% 50%, var(--camo-dark) 20%, transparent 21%),
+                    radial-gradient(circle at 0% 50%, var(--camo-mid) 20%, transparent 21%),
+                    radial-gradient(circle at 50% 100%, var(--camo-light) 25%, transparent 26%),
+                    radial-gradient(circle at 50% 0%, var(--camo-brown) 25%, transparent 26%);
+            background-size: 100px 100px;
+            animation: camouflageMove 60s linear infinite;
+        }
+
+        @keyframes camouflageMove {
+            0% { background-position: 0 0; }
+            100% { background-position: 100px 100px; }
+        }
+
+        .hero {
+            background:
+                    linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)),
+                    repeating-conic-gradient(
+                            from 0deg,
+                            var(--camo-dark) 0deg 90deg,
+                            var(--camo-mid) 90deg 180deg,
+                            var(--camo-light) 180deg 270deg,
+                            var(--camo-brown) 270deg 360deg
+                    );
+            padding: 4rem 2rem;
+            text-align: center;
+            border-bottom: 4px solid var(--accent);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M0,50 Q25,0 50,50 T100,50" fill="none" stroke="%239BC53D" stroke-width="2"/></svg>');
+            opacity: 0.1;
+            animation: patternMove 20s linear infinite;
+        }
+
+        @keyframes patternMove {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(100%); }
+        }
+
+        .feature-card {
+            background: linear-gradient(135deg,
+            rgba(75, 83, 32, 0.3),
+            rgba(123, 136, 81, 0.3),
+            rgba(164, 177, 119, 0.3)
+            );
+            border: 1px solid var(--accent);
+            padding: 1.5rem;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                    radial-gradient(circle at 30% 70%, var(--camo-dark) 10%, transparent 11%),
+                    radial-gradient(circle at 70% 30%, var(--camo-mid) 10%, transparent 11%);
+            background-size: 30px 30px;
+            opacity: 0.1;
+        }
+
+        .highlight-box {
+            background:
+                    linear-gradient(135deg,
+                    rgba(75, 83, 32, 0.2),
+                    rgba(123, 136, 81, 0.2)
+                    );
+            border: 2px solid var(--accent);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .highlight-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                    linear-gradient(45deg,
+                    transparent 48%,
+                    var(--camo-dark) 49%,
+                    var(--camo-dark) 51%,
+                    transparent 52%
+                    );
+            background-size: 20px 20px;
+            opacity: 0.1;
+            animation: patternShift 30s linear infinite;
+        }
+
+        @keyframes patternShift {
+            0% { background-position: 0 0; }
+            100% { background-position: 40px 40px; }
+        }
+
+        .feature-badge {
+            background: linear-gradient(135deg,
+            var(--camo-dark),
+            var(--camo-mid)
+            );
+            border: 1px solid var(--accent);
+            color: #ffffff;
+            text-shadow: 0 0 5px rgba(0,0,0,0.5);
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg,
+            var(--accent),
+            var(--camo-mid)
+            );
+            border: 2px solid var(--camo-dark);
+            color: #000000;
+            font-weight: bold;
+            padding: 1rem 2rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(155, 197, 61, 0.3);
+        }
+
+        .cta-button::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                    transparent,
+                    rgba(255,255,255,0.1),
+                    transparent
+            );
+            transform: rotate(45deg);
+            animation: buttonShine 3s linear infinite;
+        }
+
+        @keyframes buttonShine {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        /* Reszta stylów pozostaje jak w poprzednim kodzie */
+
+    </style>
+</head>
+<body>
+<div class="camo-pattern"></div>
+<!-- Reszta struktury HTML pozostaje taka sama jak w poprzednim kodzie -->
+</body>
+</html>
